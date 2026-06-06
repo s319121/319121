@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeeksCase | 使用者評論</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-phone-vibrate text-warning me-2"></i>GeeksCase
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="category.html">商品分類</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">互動小遊戲</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support.html">客服中心</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="reviews.html">評論區</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center border-bottom pb-3 mb-4 gap-3">
+            <nav aria-label="breadcrumb" class="mb-0">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">使用者評論</li>
+                </ol>
+            </nav>
+
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button" id="quickSwitchDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-grid-3x3-gap me-1"></i> 前往商品分類
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quickSwitchDropdown">
+                    <li><a class="dropdown-item" href="case.html">手機殼</a></li>
+                    <li><a class="dropdown-item" href="charger.html">充電器 / 充電線</a></li>
+                    <li><a class="dropdown-item" href="powerbank.html">行動電源</a></li>
+                    <li><a class="dropdown-item" href="stand.html">磁吸支架</a></li>
+                    <li><a class="dropdown-item" href="cooler.html">散熱器</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="row mb-5">
+            <div class="col-12">
+                <div class="p-5 bg-white rounded-4 shadow-sm">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center border-md-end">
+                            <h1 class="display-1 fw-bold text-dark">4.9</h1>
+                            <div class="text-warning mb-2 fs-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted">共 1,248 條真實評價</p>
+                        </div>
+                        <div class="col-md-8 ps-md-5 mt-4 mt-md-0">
+                            <h2 class="fw-bold mb-3">Geeks 們怎麼說？</h2>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge rounded-pill bg-light text-dark border px-3 py-2">#出貨超快 (512)</span>
+                                <span class="badge rounded-pill bg-light text-dark border px-3 py-2">#質感極佳 (428)</span>
+                                <span class="badge rounded-pill bg-light text-dark border px-3 py-2">#CP值爆棚 (315)</span>
+                                <span class="badge rounded-pill bg-light text-dark border px-3 py-2">#防摔超有感 (289)</span>
+                            </div>
+                            <button class="btn btn-primary px-4 py-2 fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                                <i class="bi bi-pencil-square me-2"></i> 我也要發表評價
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-5">
+            <div class="col-12">
+                <h3 class="fw-bold mb-4">精選評論</h3>
+                <div id="review-list" class="row g-4">
+                    
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm p-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-secondary rounded-circle text-white d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">A</div>
+                                        <div>
+                                            <h6 class="fw-bold mb-0">阿強 (Ah Qiang)</h6>
+                                            <small class="text-muted">購買商品：軍規防摔手機殼</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                <p class="card-text text-dark">剛買不到一週，手機就不小心從機車車架摔下來，本來以為螢幕慘了，結果手機殼完美吸收衝擊，手機毫髮無傷！真的大推！</p>
+                                <img src="images/評論區.jpg" class="img-fluid rounded mt-2" style="max-height: 150px; object-fit: cover;" alt="用戶分享圖">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm p-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">E</div>
+                                        <div>
+                                            <h6 class="fw-bold mb-0">Emily Wang</h6>
+                                            <small class="text-muted">購買商品：65W氮化鎵充電器</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                <p class="card-text text-dark">充電速度真的快到誇張，以前要充兩小時，現在不到一小時就飽了。而且體積超小，帶去咖啡廳辦公超方便！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">發表您的評價</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="newReviewForm">
+                        <div class="mb-3 text-center">
+                            <label class="form-label d-block fw-bold">點擊星星評分</label>
+                            <div class="fs-2 text-warning cursor-pointer" id="star-rating">
+                                <i class="bi bi-star-fill" data-value="1"></i>
+                                <i class="bi bi-star-fill" data-value="2"></i>
+                                <i class="bi bi-star-fill" data-value="3"></i>
+                                <i class="bi bi-star-fill" data-value="4"></i>
+                                <i class="bi bi-star-fill" data-value="5"></i>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">您的稱呼</label>
+                            <input type="text" id="reviewer-name" class="form-control" placeholder="輸入您的稱呼" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">購買商品</label>
+                            <select class="form-select" id="product-type">
+                                <option>手機殼</option>
+                                <option>充電器 / 充電線</option>
+                                <option>行動電源</option>
+                                <option>磁吸支架</option>
+                                <option>散熱器</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">評論內容</label>
+                            <textarea id="review-content" class="form-control" rows="4" placeholder="分享您的使用體驗..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">送出評論</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 GeeksCase. 319121林穎辰</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
