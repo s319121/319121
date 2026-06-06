@@ -1,0 +1,157 @@
+/* ==========================================================================
+   全域與品牌主題設定 (Theme Styles)
+   ========================================================================== */
+:root {
+    --primary-color: #1e3a8a;    /* 科技深藍 */
+    --secondary-color: #f97316;  /* 活力亮橘 */
+    --dark-color: #1f2937;       /* 深灰黑 */
+    --light-color: #f3f4f6;      /* 淺灰底 */
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* ==========================================================================
+   通用元件樣式 (Navbar & Footer)
+   ========================================================================== */
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link.active {
+    color: var(--secondary-color) !important;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+}
+
+/* ==========================================================================
+   首頁與商品頁元件 (Hero & Cards)
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3b82f6 100%);
+    color: white;
+    padding: 100px 0;
+}
+
+.product-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.btn-outline-secondary-custom {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary-custom:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* ==========================================================================
+   JavaScript 小遊戲專屬樣式 (Memory Game)
+   ========================================================================== */
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    perspective: 1000px;
+}
+
+.game-card {
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.game-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.game-card-front, .game-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 卡片背面（蓋牌時） */
+.game-card-back {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 2rem;
+}
+
+/* 卡片正面（翻開時） */
+.game-card-front {
+    background-color: white;
+    transform: rotateY(180deg);
+    padding: 10px;
+}
+
+.game-card-front img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.game-card.matched {
+    transform: rotateY(180deg);
+    pointer-events: none;
+    opacity: 0.7;
+}
